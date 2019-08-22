@@ -113,9 +113,18 @@ function assemble (assembleInput,toatalPrice) {
     receipText+='Price:'+toatalPrice;
     return receipText;
 }
+
+function generateReceipts (codes) {
+    let receiptItems=generateReceiptItems(codes);
+    let toatalPrice=countTotalPrice(receiptItems);
+    let receipText=assemble(receiptItems,toatalPrice);
+    return receipText;
+}
+
 module.exports ={countProducts
      ,fetchProduct
      ,generateReceiptItems
      ,countTotalPrice
      ,assemble
+     ,generateReceipts
 };

@@ -3,6 +3,7 @@ const {countProducts
      ,generateReceiptItems
      ,countTotalPrice
      ,assemble
+     ,generateReceipts
 } = require('../main');
 
 it ('should count codes', () => {
@@ -47,16 +48,19 @@ it('结果验证',()=>{
     //     {name:'Coca Cola',price:3,count：1}
     
     // ]
-    var countTotalPriceInput=[ 
-        { name: 'Pepsi-Cola', price: 5, count: 2 },
-        { name: 'Coca Cola', price: 3, count: 1 } 
-    ];
-    var totalPrice=countTotalPrice(countTotalPriceInput);
-    console.log(totalPrice);
-    var assembleInput=[
-        { name: 'Pepsi-Cola', price: 5, count: 2 },
-        { name: 'Coca Cola', price: 3, count: 1 } 
-    ];
-    var receipText=assemble(assembleInput,13);
+    // var countTotalPriceInput=[ 
+    //     { name: 'Pepsi-Cola', price: 5, count: 2 },
+    //     { name: 'Coca Cola', price: 3, count: 1 } 
+    // ];
+    // var totalPrice=countTotalPrice(countTotalPriceInput);
+    // console.log(totalPrice);
+    // var assembleInput=[
+    //     { name: 'Pepsi-Cola', price: 5, count: 2 },
+    //     { name: 'Coca Cola', price: 3, count: 1 } 
+    // ];
+    // var receipText=assemble(assembleInput,13);
+    console.log(receipText);
+
+    var receipText=generateReceipts(['0003','0003','0001']);
     console.log(receipText);
 })
